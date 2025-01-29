@@ -1,0 +1,102 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Program Files\\Unity\\Hub\\My HS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{58D69E2E-703A-84EA-6262-704193EC3223}|Assembly-CSharp.csproj|D:\\Program Files\\Unity\\Hub\\My HS\\assets\\scripts\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58D69E2E-703A-84EA-6262-704193EC3223}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58D69E2E-703A-84EA-6262-704193EC3223}|Assembly-CSharp.csproj|d:\\program files\\unity\\hub\\my hs\\assets\\scripts\\card\\cardmovingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58D69E2E-703A-84EA-6262-704193EC3223}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\card\\cardmovingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58D69E2E-703A-84EA-6262-704193EC3223}|Assembly-CSharp.csproj|D:\\Program Files\\Unity\\Hub\\My HS\\assets\\scripts\\card\\mycardscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58D69E2E-703A-84EA-6262-704193EC3223}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\card\\mycardscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58D69E2E-703A-84EA-6262-704193EC3223}|Assembly-CSharp.csproj|D:\\Program Files\\Unity\\Hub\\My HS\\assets\\scripts\\card\\cardvaluecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58D69E2E-703A-84EA-6262-704193EC3223}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\card\\cardvaluecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58D69E2E-703A-84EA-6262-704193EC3223}|Assembly-CSharp.csproj|D:\\Program Files\\Unity\\Hub\\My HS\\assets\\scripts\\singleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58D69E2E-703A-84EA-6262-704193EC3223}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\singleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Singleton.cs",
+              "DocumentMoniker": "D:\\Program Files\\Unity\\Hub\\My HS\\Assets\\Scripts\\Singleton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Singleton.cs",
+              "ToolTip": "D:\\Program Files\\Unity\\Hub\\My HS\\Assets\\Scripts\\Singleton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Singleton.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T04:16:21.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CardValueController.cs",
+              "DocumentMoniker": "D:\\Program Files\\Unity\\Hub\\My HS\\Assets\\Scripts\\Card\\CardValueController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Card\\CardValueController.cs",
+              "ToolTip": "D:\\Program Files\\Unity\\Hub\\My HS\\Assets\\Scripts\\Card\\CardValueController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Card\\CardValueController.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAA4wDcAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T06:39:22.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CardMovingController.cs",
+              "DocumentMoniker": "D:\\Program Files\\Unity\\Hub\\My HS\\Assets\\Scripts\\Card\\CardMovingController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Card\\CardMovingController.cs",
+              "ToolTip": "D:\\Program Files\\Unity\\Hub\\My HS\\Assets\\Scripts\\Card\\CardMovingController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Card\\CardMovingController.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAmwGEAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T05:33:31.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShopController.cs",
+              "DocumentMoniker": "D:\\Program Files\\Unity\\Hub\\My HS\\Assets\\Scripts\\ShopController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ShopController.cs",
+              "ToolTip": "D:\\Program Files\\Unity\\Hub\\My HS\\Assets\\Scripts\\ShopController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ShopController.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAQwGUAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T06:15:50.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MyCardsController.cs",
+              "DocumentMoniker": "D:\\Program Files\\Unity\\Hub\\My HS\\Assets\\Scripts\\Card\\MyCardsController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Card\\MyCardsController.cs",
+              "ToolTip": "D:\\Program Files\\Unity\\Hub\\My HS\\Assets\\Scripts\\Card\\MyCardsController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Card\\MyCardsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T04:52:05.988Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
