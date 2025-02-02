@@ -6,8 +6,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
-public class CardMovingController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
+public class CardDraggingController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
     public enum CardState {
         OnSell,
         InHand,
@@ -100,7 +101,12 @@ public class CardMovingController : MonoBehaviour, IBeginDragHandler, IDragHandl
     }
 
     private void Start() {
-        CanvObject = GameObject.Find("Canvas");
+        CanvObject = GameObject.Find("InfoCanvas");
+        if (SceneManager.GetActiveScene().name == "FightingScene") {
+            // 只有生成的敌人会进入此分支，禁用拖拽
+            enabled = false;
+            return;
+        }
         canv = CanvObject.GetComponent<Canvas>();
         dragObjRect = canv.transform as RectTransform;
     }
@@ -109,15 +115,6 @@ public class CardMovingController : MonoBehaviour, IBeginDragHandler, IDragHandl
     // Update is called once per frame
     void Update() {
 
-    }
-
-    private void OnMouseDrag() {
-    }
-
-    private void OnMouseUp() {
-        if (isOnDrag) {
-            isOnDrag = false;
-        }
     }
 
     private void TryToSellCard() {
@@ -158,13 +155,15 @@ public class CardMovingController : MonoBehaviour, IBeginDragHandler, IDragHandl
         //} else {
         //    canDrag = false;
         //}
-        dragUI = gameObject.GetComponent<RectTransform>();
+        canDrag = SceneManager.GetActiveScene().name == "ShopScene";
+        if (canDrag)
+            dragUI = gameObject.GetComponent<RectTransform>();
     }
 
     public void OnDrag(PointerEventData eventData) {
-        Vector3 globalMousePos;
+        if (!canDrag) { return; }
         if (RectTransformUtility.ScreenPointToWorldPointInRectangle
-            (dragObjRect, eventData.position, eventData.pressEventCamera, out globalMousePos)) {
+            (dragObjRect, eventData.position, eventData.pressEventCamera, out Vector3 globalMousePos)) {
 
             dragUI.position = globalMousePos;
             dragUI.rotation = dragObjRect.rotation;
@@ -172,6 +171,7 @@ public class CardMovingController : MonoBehaviour, IBeginDragHandler, IDragHandl
     }
 
     public void OnEndDrag(PointerEventData eventData) {
+        if (!canDrag) return;
         dragUI = null;
         switch (state) {
             case CardState.OnSell:

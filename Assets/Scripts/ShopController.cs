@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ShopController : Singleton<ShopController> {
     // Start is called before the first frame update
 
     public GameObject CardModel;
 
-    private Transform sellPanel;
+    public Transform sellPanel;
 
     public TextMeshProUGUI mt;
 
@@ -90,9 +92,25 @@ public class ShopController : Singleton<ShopController> {
         }
     }
 
+    public void ClearSellingCards() {
+        for (int i = 0; i < sellPanel.childCount; i++) {
+            Destroy(sellPanel.GetChild(i).gameObject);
+        }
+    }
+
+    public void RestoreSellingCards() {
+        if (false /*freeze*/) {
+
+        }
+        sellPanel.GetComponent<Image>().color = Color.clear;
+    }
+
+    public void OpenShop() {
+        gameObject.SetActive(true);
+    }
+
     private void Awake() {
         // ·ÅËæ´Ó
-        sellPanel = transform.Find("SellPanel");
         GenerateRandomMinion(4);
         GenerateRandomSpell();
 
@@ -117,6 +135,7 @@ public class ShopController : Singleton<ShopController> {
     private void GenerateRandomMinion(int num) {
         for (int i = 0; i < num; i++) {
         var newMinion = Instantiate(CardModel, sellPanel);
+
         var info = new CardInfo(Random.Range(1, 6), Random.Range(1, 6));
         newMinion.GetComponent<CardValueController>().cardInfo = info;
         }
