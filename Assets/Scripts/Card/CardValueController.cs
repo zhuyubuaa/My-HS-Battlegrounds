@@ -39,15 +39,41 @@ public class CardValueController : Singleton<CardValueController> {
 
     private TextMeshProUGUI CostTextComp;
 
-    public CardInfo cardInfo;
+    public CardInfo PrimaryCardInfo;
 
-    public static int GetHPOf(GameObject o) => o.GetComponent<CardValueController>().cardInfo.HP;
+    public int HpStatus;
 
-    public static int GetAttackOf(GameObject o) => o.GetComponent<CardValueController>().cardInfo.Attack;
+    public int AttackStatus;
 
-    public static int GetCostOf(GameObject o) => o.GetComponent<CardValueController>().cardInfo.Cost;
+    public int CostStatus;
 
-    public static bool IsSpell(GameObject o) => o.GetComponent<CardValueController>().cardInfo.isSpell;
+    public void UpdateHp(int value) {
+        HpStatus = value;
+        HPTextComp.text = HpStatus.ToString();
+    }
+
+    public void UpdateAttack(int value) {
+        AttackStatus = value;
+        AttackTextComp.text = AttackStatus.ToString();
+    }
+    public void UpdateCost(int value) {
+        CostStatus = value;
+        CostTextComp.text = CostStatus.ToString();
+    }
+
+    public static int GetHPOf(GameObject o) => o.GetComponent<CardValueController>().HpStatus;
+
+    public static int GetAttackOf(GameObject o) => o.GetComponent<CardValueController>().AttackStatus;
+
+    public static int GetCostOf(GameObject o) => o.GetComponent<CardValueController>().CostStatus;
+
+    public static bool IsSpell(GameObject o) => o.GetComponent<CardValueController>().PrimaryCardInfo.isSpell;
+
+    public static void SetHPOf(GameObject o, int value) => o.GetComponent<CardValueController>().UpdateHp(value);
+
+    public static void SetAttackOf(GameObject o, int value) => o.GetComponent<CardValueController>().UpdateAttack(value);
+
+    public static void SetCostOf(GameObject o, int value) => o.GetComponent<CardValueController>().UpdateAttack(value);
 
     // Start is called before the first frame update
     private void Start() {
@@ -55,17 +81,18 @@ public class CardValueController : Singleton<CardValueController> {
         AttackTextComp = AttackText.GetComponent<TextMeshProUGUI>();
         CostTextComp = CostText.GetComponent<TextMeshProUGUI>();
 
-        if (cardInfo.isSpell) {
+        if (PrimaryCardInfo.isSpell) {
             HPText.SetActive(false);
             AttackText.SetActive(false);
 
-            CostTextComp.text = cardInfo.Cost.ToString();
+            UpdateCost(PrimaryCardInfo.Cost);
             CostText.SetActive(true);
         } else {
+            CostStatus = 3;
             CostText.SetActive(false);
 
-            HPTextComp.text = cardInfo.HP.ToString();
-            AttackTextComp.text = cardInfo.Attack.ToString();
+            UpdateHp(PrimaryCardInfo.HP);
+            UpdateAttack(PrimaryCardInfo.Attack);
             HPText.SetActive(true);
             AttackText.SetActive(true);
         }

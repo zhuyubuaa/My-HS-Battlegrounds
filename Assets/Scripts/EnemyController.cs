@@ -13,11 +13,11 @@ public class EnemyController : Singleton<EnemyController>
         for (int i = 0; i < num; i++) {
             var newMinion = Instantiate(CardModel, EnemyPanel);
             var info = new CardInfo(Random.Range(1, 6), Random.Range(1, 6));
-            newMinion.GetComponent<CardValueController>().cardInfo = info;
+            newMinion.GetComponent<CardValueController>().PrimaryCardInfo = info;
         }
     }
 
-    private void OnEnable() {
+    private void Awake() {
         EnemyPanel.GetComponent<Image>().color = Color.clear;
         GenerateRandomEnemies(3);
     }

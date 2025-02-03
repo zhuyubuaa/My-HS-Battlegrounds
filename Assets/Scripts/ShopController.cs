@@ -129,7 +129,7 @@ public class ShopController : Singleton<ShopController> {
     private void GenerateRandomSpell() {
             var newSpell = Instantiate(CardModel, sellPanel);
             var info = new CardInfo(Random.Range(1, 4));
-            newSpell.GetComponent<CardValueController>().cardInfo = info;
+            newSpell.GetComponent<CardValueController>().PrimaryCardInfo = info;
     }
 
     private void GenerateRandomMinion(int num) {
@@ -137,7 +137,7 @@ public class ShopController : Singleton<ShopController> {
         var newMinion = Instantiate(CardModel, sellPanel);
 
         var info = new CardInfo(Random.Range(1, 6), Random.Range(1, 6));
-        newMinion.GetComponent<CardValueController>().cardInfo = info;
+        newMinion.GetComponent<CardValueController>().PrimaryCardInfo = info;
         }
     }
 
