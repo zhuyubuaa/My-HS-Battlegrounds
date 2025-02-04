@@ -39,17 +39,28 @@ public class ActionController : MonoBehaviour
             speed += 10;
             yield return null;
         }
-        StartCoroutine(Return(self, pl));
+        CardValueController.ModifyValuesAfterHit(self, target);
+        StartCoroutine(Return(self, target, pl));
     }
 
-    private IEnumerator Return(Transform self, Vector3 pl) {
-        float smoothTime = 0.5f;
-        float speed = 10;
+    private IEnumerator Return(Transform self, Transform target, Vector3 pl) {
+        float smoothTime = 0.2f;
         Vector3 velocity = Vector3.zero;
         while(Vector3.Distance(self.position, pl) > 0.1f) {
             self.position = Vector3.SmoothDamp(self.position, pl, ref velocity, smoothTime, Mathf.Infinity);
             yield return null;
         }
+        if (CardValueController.GetHPOf(self.gameObject) <= 0) {
+            MinionDie(self);
+        }
+        if (CardValueController.GetHPOf(target.gameObject) <= 0) {
+            MinionDie(target);
+        }
+    }
+
+    private void MinionDie(Transform m) {
+        var mShowComp = m.GetComponent<CardShowingController>();
+        StartCoroutine(mShowComp.FadeOut());
     }
 
     // Update is called once per frame

@@ -75,6 +75,19 @@ public class CardValueController : Singleton<CardValueController> {
 
     public static void SetCostOf(GameObject o, int value) => o.GetComponent<CardValueController>().UpdateAttack(value);
 
+    public static void ModifyValuesAfterHit(Transform hitter, Transform hittee) {
+        var hitterO = hitter.gameObject;
+        var hitteeO = hittee.gameObject;
+        var erHP = GetHPOf(hitterO);
+        var eeHP = GetHPOf(hitteeO);
+        var erAttack = GetAttackOf(hitterO);
+        var eeAttack = GetAttackOf(hitteeO);
+        var erLeftHP = erHP - eeAttack;
+        var eeLeftHP = eeHP - erAttack;
+        SetHPOf(hitterO, erLeftHP);
+        SetHPOf(hitteeO, eeLeftHP);   
+    }
+
     // Start is called before the first frame update
     private void Start() {
         HPTextComp = HPText.GetComponent<TextMeshProUGUI>();
